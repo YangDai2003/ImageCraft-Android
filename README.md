@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/674be4ad-ce9e-4553-8214-1024a2daac0b" width="10%"/>
+<img src="screenshots/icon.png" width="10%"/>
 
 # 图像大师 
 # ImageCraft
@@ -14,7 +14,7 @@
       <img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" height="100">
 </a>
 
-<a href="https://github.com/YangDai2003/ImageCraft-Android/blob/master/app/release">
+<a href="app/release">
       <img alt="Get it on GitHub" src="https://raw.githubusercontent.com/deckerst/common/main/assets/get-it-on-github.png" height="100">
 </a>
 
@@ -31,16 +31,16 @@
 * 适配最新安卓特性 Adapt to the latest Android API
 
 ## 📷 屏幕截图 Screenshots
-<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/e318cfc1-3ee0-4ece-9af7-03e4a36fe920" width="15%"/>
-<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/e10d85d8-b958-4362-abee-a8199c66e7e3" width="15%"/>
-<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/b0cde6b7-da7c-4383-961f-0ea610ec7520" width="15%"/>
-<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/9b84d9e5-5984-4928-91c9-fc21633b54f9" width="15%"/>
-<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/8a64f4cf-226d-4b6a-9ed5-174f2d34d88c" width="15%"/>
-<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/8cd2b5ac-deb6-408d-8540-2854d52af8d8" width="15%"/>
-<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/b5761a74-c231-4125-9eb8-edf0581d560c" width="15%"/>
-<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/d6573930-2b17-4dc2-814a-54e0f3a04ad4" width="15%"/>
-<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/b5b8503c-f156-4b87-b7c6-c6c53c6b0a11" width="15%"/>
-<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/5fc709a0-5e5e-4a50-896a-27431e12afe6" width="15%"/>
+<img src="screenshots/1695776666480_100.PNG" width="15%"/>
+<img src="screenshots/1695776673986_100.PNG" width="15%"/>
+<img src="screenshots/1695776679010_100.PNG" width="15%"/>
+<img src="screenshots/1695776685370_100.PNG" width="15%"/>
+<img src="screenshots/1695776690210_100.PNG" width="15%"/>
+<img src="screenshots/1695776696233_100.PNG" width="15%"/>
+<img src="screenshots/1695776703417_100.PNG" width="15%"/>
+<img src="screenshots/1695776712842_100.PNG" width="15%"/>
+<img src="screenshots/1695776718680_100.PNG" width="15%"/>
+<img src="screenshots/1695776725299_100.PNG" width="15%"/>
 
 ## 🌎 语言翻译 Translations
 
