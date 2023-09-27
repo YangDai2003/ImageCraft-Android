@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mainFragment"
+        android:icon="@drawable/functions"
+        android:title="@string/functions" />
+
+    <item
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/more"
+        android:title="@string/more" />
+</menu>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VISUAL_USER_SELECTED" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+
+    <queries>
+        <package android:name="com.yangdai.simpleocr" />
+    </queries>
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:enableOnBackInvokedCallback="true"
+        android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:localeConfig="@xml/locales_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ImageCraft.ActionBar"
+        tools:targetApi="tiramisu">
+        <activity
+            android:name=".functions_special.ExifActivity"
+            android:exported="false"
+            android:label="@string/exif"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".functions.Video2GifActivity"
+            android:exported="false"
+            android:label="@string/video_to_gif"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".functions.Gif2ImageActivity"
+            android:exported="false"
+            android:label="@string/gif_to_image"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".otherActivities.AboutActivity"
+            android:exported="false"
+            android:label="@string/about"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".functions.Image2ZipActivity"
+            android:exported="false"
+            android:label="@string/image_to_zip"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".functions.Image2PDFActivity"
+            android:exported="false"
+            android:label="@string/image_to_pdf"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".functions.PDF2ImageActivity"
+            android:exported="false"
+            android:label="@string/pdf_to_image"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".functions_special.PickColorActivity"
+            android:exported="false"
+            android:label="@string/picker"
+            android:parentActivityName=".main.MainActivity"
+            android:theme="@style/Theme.ImageCraft.NoActionBar" />
+        <activity
+            android:name=".functions_special.ThemeActivity"
+            android:exported="false"
+            android:label="@string/md"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".functions_standard.RotateActivity"
+            android:exported="false"
+            android:label="@string/rotate"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".functions_standard.CompressActivity"
+            android:exported="false"
+            android:label="@string/compress"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".functions_standard.ConvertActivity"
+            android:exported="false"
+            android:label="@string/convert"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".otherActivities.CancelledActivity"
+            android:exported="false"
+            android:label=""
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".otherActivities.FinishedActivity"
+            android:exported="false"
+            android:label=""
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".functions_standard.ResizeActivity"
+            android:exported="false"
+            android:label="@string/resize"
+            android:parentActivityName=".main.MainActivity" />
+        <activity
+            android:name=".main.MainActivity"
+            android:allowUntrustedActivityEmbedding="true"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/Theme.ImageCraft.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".otherActivities.PhotoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ImageCraft.NoActionBar" />
+        <activity
+            android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
+            android:theme="@style/Theme.ImageCraft.ActionBar" />
+        <activity
+            android:name="com.google.android.gms.oss.licenses.OssLicensesActivity"
+            android:theme="@style/Theme.ImageCraft.ActionBar" />
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:theme="@style/Theme.ImageCraft.NoActionBar" />
+
+        <property
+            android:name="android.window.PROPERTY_ACTIVITY_EMBEDDING_SPLITS_ENABLED"
+            android:value="true" />
+    </application>
+
+</manifest>

@@ -1,0 +1,7 @@
+<resources>
+    <!-- Reply Preference -->
+    <array name="initial_slider_values">
+        <item>20.0</item>
+        <item>70.0</item>
+    </array>
+</resources>

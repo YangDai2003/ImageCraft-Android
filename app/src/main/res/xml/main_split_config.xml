@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:window="http://schemas.android.com/apk/res-auto">
+
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.33">
+        <SplitPairFilter
+            window:primaryActivityName="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
+            window:secondaryActivityName="com.google.android.gms.oss.licenses.OssLicensesActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.google.android.gms.oss.licenses.OssLicensesMenuActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yalantis.ucrop.UCropActivity" />
+    </SplitPairRule>
+
+    <!---->
+
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.functions_standard.CompressActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.functions_standard.ConvertActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.functions_standard.ResizeActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.functions_standard.RotateActivity" />
+    </SplitPairRule>
+
+    <!---->
+
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.functions_special.ExifActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.functions_special.PickColorActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.functions_special.ThemeActivity" />
+    </SplitPairRule>
+
+    <!---->
+
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.functions.Gif2ImageActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.functions.Image2PDFActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.functions.Image2ZipActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.functions.PDF2ImageActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.functions.Video2GifActivity" />
+    </SplitPairRule>
+
+    <!---->
+
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.otherActivities.AboutActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.otherActivities.CancelledActivity" />
+    </SplitPairRule>
+    <SplitPairRule
+        window:finishPrimaryWithSecondary="never"
+        window:finishSecondaryWithPrimary="always"
+        window:splitMinWidthDp="840"
+        window:splitRatio="0.5">
+        <SplitPairFilter
+            window:primaryActivityName="com.yangdai.imagecraft.main.MainActivity"
+            window:secondaryActivityName="com.yangdai.imagecraft.otherActivities.FinishedActivity" />
+    </SplitPairRule>
+</resources>

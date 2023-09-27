@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/copyColor"
+        android:icon="@drawable/content_copy"
+        android:title="@android:string/copy"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/shareColor"
+        android:icon="@drawable/ios_share"
+        android:title="@string/share_color"
+        app:showAsAction="ifRoom" />
+</menu>
