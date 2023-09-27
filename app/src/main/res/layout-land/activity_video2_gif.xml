@@ -84,7 +84,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:gravity="center"
+                    android:textAlignment="center"
                     android:imeOptions="actionDone"
                     android:importantForAutofill="no"
                     android:inputType="number"
@@ -150,6 +150,81 @@
                     android:text="@string/match_fps"
                     android:textSize="14sp" />
             </RadioGroup>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/size_div"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:alpha="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/size_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/gif_resolution"
+                android:textColor="?colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline8"
+                app:layout_constraintTop_toBottomOf="@+id/size_div" />
+
+            <TextView
+                android:id="@+id/size_output"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/size_tv"
+                app:layout_constraintStart_toStartOf="@+id/size_tv"
+                app:layout_constraintTop_toBottomOf="@+id/size_tv" />
+
+            <LinearLayout
+                android:id="@+id/lr_for_slider2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline8"
+                app:layout_constraintTop_toBottomOf="@+id/size_output">
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/slider2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="14"
+                    android:stepSize="1"
+                    android:value="50"
+                    android:valueFrom="10"
+                    android:valueTo="100" />
+
+                <EditText
+                    android:id="@+id/ed_size"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:textAlignment="center"
+                    android:imeOptions="actionDone"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:text="50"
+                    tools:ignore="HardcodedText,LabelFor" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="%"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline8"

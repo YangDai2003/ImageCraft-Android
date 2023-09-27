@@ -28,7 +28,7 @@ public class CompressActivity extends BaseImageProcessingActivity {
         setContentView(binding.getRoot());
         init();
         calculateTotalMemorySize(binding.infoContent);
-        setRunnable();
+        enableMultiThreadProcessing();
     }
 
     @Override
@@ -62,9 +62,9 @@ public class CompressActivity extends BaseImageProcessingActivity {
         });
         binding.slider.addOnChangeListener((slider, value, fromUser) -> {
             size = (int) value;
-            binding.edPercent.setText(String.valueOf(size));
+            binding.edKb.setText(String.valueOf(size));
         });
-        binding.edPercent.addTextChangedListener(new TextWatcher() {
+        binding.edKb.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -77,6 +77,7 @@ public class CompressActivity extends BaseImageProcessingActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                binding.edKb.setSelection(editable.length());
                 try {
                     int p = Integer.parseInt(editable.toString());
                     if (p > 499 && p < 2049) {
@@ -88,10 +89,10 @@ public class CompressActivity extends BaseImageProcessingActivity {
                 }
             }
         });
-        binding.edPercent.setOnEditorActionListener((textView, i, keyEvent) -> {
+        binding.edKb.setOnEditorActionListener((textView, i, keyEvent) -> {
             if (i == EditorInfo.IME_ACTION_DONE) {
                 Utils.closeKeyboard(CompressActivity.this);
-                binding.edPercent.clearFocus();
+                binding.edKb.clearFocus();
                 return true;
             }
             return false;

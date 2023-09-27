@@ -34,7 +34,7 @@ public class ResizeActivity extends BaseImageProcessingActivity {
         setContentView(binding.getRoot());
         init();
         calculateTotalMemorySize(binding.infoContent);
-        setRunnable();
+        enableMultiThreadProcessing();
     }
 
     @Override
@@ -85,6 +85,7 @@ public class ResizeActivity extends BaseImageProcessingActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                binding.edPercent.setSelection(editable.length());
                 try {
                     int p = Integer.parseInt(editable.toString());
                     if (p > 0 && p < 100) {
@@ -124,6 +125,7 @@ public class ResizeActivity extends BaseImageProcessingActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                binding.edWidth.setSelection(editable.length());
                 try {
                     width = Integer.parseInt(editable.toString());
                 } catch (Exception ignored) {
@@ -144,6 +146,7 @@ public class ResizeActivity extends BaseImageProcessingActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                binding.edHeight.setSelection(editable.length());
                 try {
                     height = Integer.parseInt(editable.toString());
                 } catch (Exception ignored) {

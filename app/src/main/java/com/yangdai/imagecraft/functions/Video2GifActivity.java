@@ -26,9 +26,14 @@ public class Video2GifActivity extends BaseImageProcessingActivity {
 
     private Player player;
     private int fps = 10;
+    private int percent = 50;
+    private int width;
+    private int height;
     private boolean noInterval = true;
     private ActivityVideo2GifBinding binding;
+    private BitmapRetriever bitmapRetriever;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,19 +42,26 @@ public class Video2GifActivity extends BaseImageProcessingActivity {
 
         initSpecial();
 
+        bitmapRetriever = new BitmapRetriever(FileUtils.getRealPathFromUri(viewModel.getUriList().get(0), viewModel.getContext()));
+        width = bitmapRetriever.getVideoWidth();
+        height = bitmapRetriever.getVideoHeight();
+        binding.sizeOutput.setText(width / 2 + " × " + height / 2);
+
         viewModel.setRunnable(() -> {
             String outputFileName = FileUtils.generateDateName() + ".gif";
             File outputFile = new File(FileUtils.getOutputDirectory(viewModel.getContext()), outputFileName);
-            convertVideoToGif(FileUtils.getRealPathFromUri(viewModel.getUriList().get(0), viewModel.getContext()), outputFile.getAbsolutePath());
+            convertVideoToGif(outputFile.getAbsolutePath());
         });
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void initUi() {
         player = new ExoPlayer.Builder(this).build();
         binding.playerView.setPlayer(player);
         player.setMediaItem(MediaItem.fromUri(viewModel.getUriList().get(0)));
         player.prepare();
+
 
         binding.radioGroup.setOnCheckedChangeListener((radioGroup, id) -> noInterval = id == R.id.auto);
         binding.slider.addOnChangeListener((slider, value, fromUser) -> {
@@ -69,6 +81,7 @@ public class Video2GifActivity extends BaseImageProcessingActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
+                binding.edFps.setSelection(s.length());
                 try {
                     int input = Integer.parseInt(s.toString());
                     if (input > 4 && input < 21) {
@@ -88,6 +101,48 @@ public class Video2GifActivity extends BaseImageProcessingActivity {
             }
             return false;
         });
+
+
+        binding.slider2.addOnChangeListener((slider, value, fromUser) -> {
+            percent = (int) value;
+            binding.edSize.setText(String.valueOf(percent));
+            double newWidth = width * ((double) percent / 100); // 将percent转换为浮点数
+            double newHeight = height * ((double) percent / 100);
+            binding.sizeOutput.setText((int) newWidth + " × " + (int) newHeight); // 四舍五入到整数
+        });
+        binding.edSize.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                binding.edSize.setSelection(s.length());
+                try {
+                    int input = Integer.parseInt(s.toString());
+                    if (input > 9 && input < 101) {
+                        percent = input;
+                        binding.slider2.setValue(percent);
+                    }
+                } catch (Exception ignored) {
+
+                }
+            }
+        });
+        binding.edSize.setOnEditorActionListener((textView, i, keyEvent) -> {
+            if (i == EditorInfo.IME_ACTION_DONE) {
+                Utils.closeKeyboard(Video2GifActivity.this);
+                binding.edSize.clearFocus();
+                return true;
+            }
+            return false;
+        });
         binding.btFloating.setOnClickListener(v -> {
             player.pause();
             start();
@@ -96,11 +151,13 @@ public class Video2GifActivity extends BaseImageProcessingActivity {
 
     // 视频转换为GIF
     @SuppressLint("SetTextI18n")
-    private void convertVideoToGif(String inputVideoPath, String outputGifPath) {
-        BitmapRetriever extractor = new BitmapRetriever();
-        extractor.setFPS(fps);
+    private void convertVideoToGif(String outputGifPath) {
+        bitmapRetriever.setFps(fps);
+        double newWidth = width * ((double) percent / 100); // 将percent转换为浮点数
+        double newHeight = height * ((double) percent / 100);
+        bitmapRetriever.setOutputBitmapSize((int) newWidth, (int) newHeight);
         // 截取视频的起始时间
-        List<Bitmap> bitmaps = extractor.generateBitmaps(inputVideoPath);
+        List<Bitmap> bitmaps = bitmapRetriever.generateBitmaps();
         viewModel.setTaskCount(bitmaps.size());
 
         GifEncoder encoder = new GifEncoder();
@@ -118,8 +175,11 @@ public class Video2GifActivity extends BaseImageProcessingActivity {
             encoder.addFrame(bitmaps.get(i));
             viewModel.addTaskDone();
         }
-
         encoder.finish();
+        for (Bitmap bitmap : bitmaps) {
+            bitmap.recycle(); // 手动回收每个Bitmap资源
+        }
+        bitmaps.clear(); // 清空列表
         viewModel.setFinished(true);
     }
 

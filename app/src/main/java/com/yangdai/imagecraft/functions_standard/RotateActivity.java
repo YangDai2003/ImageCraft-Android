@@ -27,7 +27,7 @@ public class RotateActivity extends BaseImageProcessingActivity {
         setContentView(binding.getRoot());
         init();
         calculateTotalMemorySize(binding.infoContent);
-        setRunnable();
+        enableMultiThreadProcessing();
     }
 
     @Override

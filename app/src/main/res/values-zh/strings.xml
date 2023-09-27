@@ -110,4 +110,5 @@
     <string name="on">开</string>
     <string name="off">关</string>
     <string name="share_color">分享</string>
+    <string name="gif_resolution">Gif分辨率</string>
 </resources>

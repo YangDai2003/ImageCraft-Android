@@ -124,7 +124,7 @@ public abstract class BaseImageProcessingActivity extends AppCompatActivity {
 
     }
 
-    protected void setRunnable() {
+    protected void enableMultiThreadProcessing() {
         viewModel.setRunnable(() -> {
             try {
                 List<Uri> uriList = viewModel.getUriList();

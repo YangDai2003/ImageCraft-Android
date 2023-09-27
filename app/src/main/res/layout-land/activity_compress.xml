@@ -132,11 +132,11 @@
                     android:valueTo="2048" />
 
                 <EditText
-                    android:id="@+id/ed_percent"
+                    android:id="@+id/ed_kb"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
-                    android:gravity="center"
+                    android:textAlignment="center"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:maxLength="4"

@@ -24,7 +24,7 @@ public class ConvertActivity extends BaseImageProcessingActivity {
         setContentView(binding.getRoot());
         init();
         calculateTotalMemorySize(binding.infoContent);
-        setRunnable();
+        enableMultiThreadProcessing();
     }
 
     @Override
