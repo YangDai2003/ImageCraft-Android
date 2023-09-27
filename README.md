@@ -20,7 +20,7 @@
 
 <br>
 
-<div align="left"/>
+<div align="left">
 
 ## 📖 特点 Features
 
@@ -28,7 +28,7 @@
 * 材料主题3 Material You,
 * 适配不同大小和方向的屏幕 Portrait and landscape orientation,
 * 多项实用功能 Multiple useful functions
-* 适配最新安卓特性 Adapt to the latest Android API
+* 适配最新安卓特性(预测新返回手势、图片选择器、活动嵌入、单色主题图标、应用内语言切换等) Adapt to the latest Android features (predictive back gesture, photo picker, activity embedding, monochrome theme icon, in-app language switching, etc.)
 
 ## 📷 屏幕截图 Screenshots
 <img src="screenshots/1695776666480_100.PNG" width="15%"/>
@@ -109,3 +109,4 @@ Main features:
 - 材料主题预览： 支持根据选择的图片，生成对应的材料主题3，多种控件可供预览。
 
 - 图片取色： 选取并查看图片上任意位置的颜色。
+</div>
