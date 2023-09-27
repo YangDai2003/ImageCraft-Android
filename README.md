@@ -1,6 +1,6 @@
-
 <div align="center">
-<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/91c34936-d450-4b52-9dca-66a932f023d0" width="10%"/>
+
+<img src="https://github.com/YangDai2003/ImageCraft-Android/assets/107718193/674be4ad-ce9e-4553-8214-1024a2daac0b" width="10%"/>
 
 # 图像大师 
 # ImageCraft
