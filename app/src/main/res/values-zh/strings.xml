@@ -111,4 +111,5 @@
     <string name="off">关</string>
     <string name="share_color">分享</string>
     <string name="gif_resolution">Gif分辨率</string>
+    <string name="github_content">在Github上讨论问题、提交贡献</string>
 </resources>

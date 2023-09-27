@@ -408,6 +408,52 @@
 
                     </RelativeLayout>
                 </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/itemGithub"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:layout_marginVertical="4dp"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginHorizontal="8dp"
+                        android:importantForAccessibility="no"
+                        android:padding="4dp"
+                        android:src="@drawable/github" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/titleGithub"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:text="Github"
+                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/titleGithub"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:text="@string/github_content"
+                            android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
+
+                    </RelativeLayout>
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout

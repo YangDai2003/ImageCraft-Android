@@ -65,10 +65,19 @@ public class MoreFragment extends Fragment {
         setupRateApp(view);
         setupShareApp(view);
         setupSendFeedback(view);
+        setupGithub(view);
         setupPrivacyPolicy(view);
         setupVersionInfo(view);
         setupOpenSourceLicenses(view);
         setupOtherApps(view);
+    }
+
+    private void setupGithub(View view) {
+        view.findViewById(R.id.itemGithub).setOnClickListener(v -> {
+            Uri uri = Uri.parse("https://github.com/YangDai2003/ImageCraft-Android");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+        });
     }
 
     private void setupEmbeddingBehavior(View view) {
