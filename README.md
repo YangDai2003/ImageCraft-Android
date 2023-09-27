@@ -1,3 +1,6 @@
+- [English](README.md)
+- [中文](README_zh.md)
+
 <div align="center">
 
 <img src="screenshots/icon.png" width="10%"/>
