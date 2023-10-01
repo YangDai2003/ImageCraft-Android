@@ -15,8 +15,8 @@ android {
         minSdk 29
         //noinspection EditedTargetSdkVersion
         targetSdk 34
-        versionCode 15
-        versionName '2.5'
+        versionCode 16
+        versionName '2.6'
         resourceConfigurations += ["en", "zh"]
     }
 

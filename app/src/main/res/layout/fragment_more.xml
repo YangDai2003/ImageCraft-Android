@@ -409,6 +409,13 @@
                     </RelativeLayout>
                 </LinearLayout>
 
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.5"
+                    app:dividerInsetEnd="16dp"
+                    app:dividerInsetStart="55dp" />
+
                 <LinearLayout
                     android:id="@+id/itemGithub"
                     android:layout_width="match_parent"

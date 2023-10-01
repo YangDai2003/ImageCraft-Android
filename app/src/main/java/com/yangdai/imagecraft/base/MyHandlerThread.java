@@ -2,9 +2,10 @@ package com.yangdai.imagecraft.base;
 
 import android.os.Handler;
 import android.os.HandlerThread;
+import android.os.SystemClock;
 
 public class MyHandlerThread extends HandlerThread {
-    private static final String TAG = "ImageProcessingThread" + System.currentTimeMillis();
+    private static final String TAG = "ImageProcessingThread" + SystemClock.uptimeMillis();
     private Handler handler;
 
     public MyHandlerThread() {
