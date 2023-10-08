@@ -8,12 +8,12 @@ import android.os.Bundle;
 import com.yangdai.imagecraft.databinding.ActivityConvertBinding;
 import com.yangdai.imagecraft.imagedata.BitmapDecoder;
 import com.yangdai.imagecraft.imagedata.BitmapUtils;
-import com.yangdai.imagecraft.imagedata.ImageTypeEnum;
+import com.yangdai.imagecraft.imagedata.ImageType;
 import com.yangdai.imagecraft.R;
 import com.yangdai.imagecraft.base.BaseImageProcessingActivity;
 
 public class ConvertActivity extends BaseImageProcessingActivity {
-    private ImageTypeEnum type = ImageTypeEnum.JPEG;
+    private ImageType type = ImageType.JPEG;
     private ActivityConvertBinding binding;
 
     @SuppressLint("SetTextI18n")
@@ -46,11 +46,11 @@ public class ConvertActivity extends BaseImageProcessingActivity {
         binding.toggleGroup.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
             if (isChecked) {
                 if (checkedId == R.id.buttonJPEG) {
-                    type = ImageTypeEnum.JPEG;
+                    type = ImageType.JPEG;
                 } else if (checkedId == R.id.buttonPNG) {
-                    type = ImageTypeEnum.PNG;
+                    type = ImageType.PNG;
                 } else {
-                    type = ImageTypeEnum.WEBP;
+                    type = ImageType.WEBP;
                 }
             }
         });

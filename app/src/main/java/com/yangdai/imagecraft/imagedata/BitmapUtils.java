@@ -92,14 +92,14 @@ public class BitmapUtils {
     /**
      * 根据图片原格式返回类型，默认jpeg
      */
-    public static ImageTypeEnum getImageType(String imagePath) {
+    public static ImageType getImageType(String imagePath) {
         String type = getMimeType(imagePath);
         if ("image/png".equals(type)) {
-            return ImageTypeEnum.PNG;
+            return ImageType.PNG;
         } else if ("image/webp".equals(type)) {
-            return ImageTypeEnum.WEBP;
+            return ImageType.WEBP;
         } else {
-            return ImageTypeEnum.JPEG;
+            return ImageType.JPEG;
         }
     }
 
@@ -162,9 +162,9 @@ public class BitmapUtils {
     /**
      * 压缩方法
      */
-    public static Bitmap compressBitmap(Bitmap bitmap, ImageTypeEnum type) {
+    public static Bitmap compressBitmap(Bitmap bitmap, ImageType type) {
         Bitmap.CompressFormat compressFormat;
-        if (type == ImageTypeEnum.JPEG || type == ImageTypeEnum.PNG) {
+        if (type == ImageType.JPEG || type == ImageType.PNG) {
             compressFormat = Bitmap.CompressFormat.JPEG;
         } else {
             compressFormat = Bitmap.CompressFormat.WEBP;
@@ -178,9 +178,9 @@ public class BitmapUtils {
     /**
      * 压缩图片到指定大小
      */
-    public static Bitmap compressBitmap(Bitmap bitmap, ImageTypeEnum type, int maxSizeInKb) {
+    public static Bitmap compressBitmap(Bitmap bitmap, ImageType type, int maxSizeInKb) {
         Bitmap.CompressFormat compressFormat;
-        if (type == ImageTypeEnum.JPEG || type == ImageTypeEnum.PNG) {
+        if (type == ImageType.JPEG || type == ImageType.PNG) {
             compressFormat = Bitmap.CompressFormat.JPEG;
         } else {
             compressFormat = Bitmap.CompressFormat.WEBP;
@@ -223,7 +223,7 @@ public class BitmapUtils {
     /**
      * API29 中的最新保存图片到相册的方法
      */
-    public static String saveImage(Bitmap bitmap, Context context, ImageTypeEnum type) {
+    public static String saveImage(Bitmap bitmap, Context context, ImageType type) {
         ContentValues values = new ContentValues();
         values.put(MediaStore.Images.Media.RELATIVE_PATH, "Pictures/" + context.getString(R.string.app_name));
         values.put(MediaStore.Images.Media.IS_PENDING, true);

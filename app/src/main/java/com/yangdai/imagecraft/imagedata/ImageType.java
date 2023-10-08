@@ -2,7 +2,7 @@ package com.yangdai.imagecraft.imagedata;
 
 import android.graphics.Bitmap;
 
-public enum ImageTypeEnum {
+public enum ImageType {
     JPEG("image/jpeg", Bitmap.CompressFormat.JPEG),
     PNG("image/png", Bitmap.CompressFormat.PNG),
     WEBP("image/webp", Bitmap.CompressFormat.WEBP);
@@ -10,7 +10,7 @@ public enum ImageTypeEnum {
     private final String mimeType;
     private final Bitmap.CompressFormat compressFormat;
 
-    ImageTypeEnum(String mimeType, Bitmap.CompressFormat compressFormat) {
+    ImageType(String mimeType, Bitmap.CompressFormat compressFormat) {
         this.mimeType = mimeType;
         this.compressFormat = compressFormat;
     }

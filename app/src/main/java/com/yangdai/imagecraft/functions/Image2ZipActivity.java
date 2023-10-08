@@ -1,5 +1,6 @@
 package com.yangdai.imagecraft.functions;
 
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
@@ -88,6 +89,17 @@ public class Image2ZipActivity extends BaseImageProcessingActivity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 } finally {
+                    // 通知系统刷新文件夹
+                    MediaScannerConnection.scanFile(
+                            viewModel.getContext(),
+                            new String[]{zipFile.getAbsolutePath()},
+                            null,
+                            (path, uri) -> {
+                                // 扫描完成后的回调方法
+                                // 可以在这里执行一些操作，例如显示一个Toast消息
+                                // 文件现在应该在文件管理器中可见
+                            }
+                    );
                     viewModel.setFinished(true);
                 }
             } else {

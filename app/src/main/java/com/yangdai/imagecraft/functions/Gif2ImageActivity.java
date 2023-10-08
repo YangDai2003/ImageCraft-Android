@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide;
 import com.yangdai.imagecraft.databinding.ActivityGif2ImageBinding;
 import com.yangdai.imagecraft.utils.FileUtils;
 import com.yangdai.imagecraft.imagedata.BitmapUtils;
-import com.yangdai.imagecraft.imagedata.ImageTypeEnum;
+import com.yangdai.imagecraft.imagedata.ImageType;
 import com.yangdai.imagecraft.R;
 import com.yangdai.imagecraft.base.BaseImageProcessingActivity;
 
@@ -21,7 +21,7 @@ import java.util.concurrent.Future;
 import pl.droidsonroids.gif.GifDrawable;
 
 public class Gif2ImageActivity extends BaseImageProcessingActivity {
-    private ImageTypeEnum type = ImageTypeEnum.JPEG;
+    private ImageType type = ImageType.JPEG;
     private ActivityGif2ImageBinding binding;
 
     @Override
@@ -79,11 +79,11 @@ public class Gif2ImageActivity extends BaseImageProcessingActivity {
         binding.toggleGroup.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
             if (isChecked) {
                 if (checkedId == R.id.buttonJPEG) {
-                    type = ImageTypeEnum.JPEG;
+                    type = ImageType.JPEG;
                 } else if (checkedId == R.id.buttonPNG) {
-                    type = ImageTypeEnum.PNG;
+                    type = ImageType.PNG;
                 } else {
-                    type = ImageTypeEnum.WEBP;
+                    type = ImageType.WEBP;
                 }
             }
         });

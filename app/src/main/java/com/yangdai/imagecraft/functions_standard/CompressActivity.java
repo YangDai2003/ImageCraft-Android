@@ -12,7 +12,7 @@ import com.yangdai.imagecraft.R;
 import com.yangdai.imagecraft.databinding.ActivityCompressBinding;
 import com.yangdai.imagecraft.imagedata.BitmapDecoder;
 import com.yangdai.imagecraft.imagedata.BitmapUtils;
-import com.yangdai.imagecraft.imagedata.ImageTypeEnum;
+import com.yangdai.imagecraft.imagedata.ImageType;
 import com.yangdai.imagecraft.utils.Utils;
 import com.yangdai.imagecraft.base.BaseImageProcessingActivity;
 
@@ -35,12 +35,12 @@ public class CompressActivity extends BaseImageProcessingActivity {
     protected void processImage(Uri uri) {
         BitmapDecoder bitmapDecoder = new BitmapDecoder(viewModel.getContext(), uri);
         Bitmap bitmap = bitmapDecoder.getBitmap();
-        ImageTypeEnum type = bitmapDecoder.getImageType();
+        ImageType type = bitmapDecoder.getImageType();
         if (bitmap != null) {
             try {
                 Bitmap compressedBitmap = isAuto ? BitmapUtils.compressBitmap(bitmap, type) : BitmapUtils.compressBitmap(bitmap, type, size);
-                if (type == ImageTypeEnum.PNG) {
-                    type = ImageTypeEnum.JPEG;
+                if (type == ImageType.PNG) {
+                    type = ImageType.JPEG;
                 }
                 if (compressedBitmap != null) {
                     // 保存更改后的图像

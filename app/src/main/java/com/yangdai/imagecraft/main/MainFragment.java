@@ -38,7 +38,7 @@ import com.yalantis.ucrop.UCropActivity;
 import com.yangdai.imagecraft.utils.FileUtils;
 import com.yangdai.imagecraft.utils.PermissionUtils;
 import com.yangdai.imagecraft.imagedata.BitmapUtils;
-import com.yangdai.imagecraft.imagedata.ImageTypeEnum;
+import com.yangdai.imagecraft.imagedata.ImageType;
 import com.yangdai.imagecraft.R;
 import com.yangdai.imagecraft.utils.Utils;
 
@@ -333,7 +333,7 @@ public class MainFragment extends Fragment {
                         FileOutputStream fileOutputStream = new FileOutputStream(convertedFile);
                         fileOutputStream.write(jpegData);
                         fileOutputStream.close();
-                        cropImage(Uri.fromFile(convertedFile), ImageTypeEnum.JPEG);
+                        cropImage(Uri.fromFile(convertedFile), ImageType.JPEG);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -348,7 +348,7 @@ public class MainFragment extends Fragment {
         }
     }
 
-    private void cropImage(Uri uri, ImageTypeEnum type) {
+    private void cropImage(Uri uri, ImageType type) {
         UCrop.Options options = new UCrop.Options();
         options.setToolbarColor(SurfaceColors.SURFACE_0.getColor(requireContext()));
         options.setToolbarWidgetColor(color);

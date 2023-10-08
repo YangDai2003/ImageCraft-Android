@@ -175,11 +175,17 @@ public class Video2GifActivity extends BaseImageProcessingActivity {
             encoder.addFrame(bitmaps.get(i));
             viewModel.addTaskDone();
         }
-        encoder.finish();
-        for (Bitmap bitmap : bitmaps) {
-            bitmap.recycle(); // 手动回收每个Bitmap资源
+
+        try {
+            encoder.finish();
+            bitmapRetriever.close();
+            for (Bitmap bitmap : bitmaps) {
+                bitmap.recycle(); // 手动回收每个Bitmap资源
+            }
+            bitmaps.clear(); // 清空列表
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        bitmaps.clear(); // 清空列表
         viewModel.setFinished(true);
     }
 

@@ -24,7 +24,7 @@ import com.yalantis.ucrop.UCrop;
 import com.yangdai.imagecraft.utils.FileUtils;
 import com.yangdai.imagecraft.utils.PermissionUtils;
 import com.yangdai.imagecraft.imagedata.BitmapUtils;
-import com.yangdai.imagecraft.imagedata.ImageTypeEnum;
+import com.yangdai.imagecraft.imagedata.ImageType;
 import com.yangdai.imagecraft.R;
 import com.yangdai.imagecraft.utils.Utils;
 
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             if (resultUri != null) {
                 String path = FileUtils.getRealPathFromUri(resultUri, this);
                 Bitmap bitmap = BitmapFactory.decodeFile(path);
-                ImageTypeEnum type = BitmapUtils.getImageType(path);
+                ImageType type = BitmapUtils.getImageType(path);
                 String savedPath = BitmapUtils.saveImage(bitmap, this, type);
                 if (!savedPath.isEmpty()) {
                     Snackbar.make(findViewById(R.id.fragment_container_view), getString(R.string.saved), Snackbar.LENGTH_SHORT)

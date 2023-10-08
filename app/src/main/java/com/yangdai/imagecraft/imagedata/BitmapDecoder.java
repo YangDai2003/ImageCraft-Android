@@ -17,13 +17,13 @@ import java.util.Map;
 public class BitmapDecoder {
     private final Bitmap bitmap;
     private final int orientation;
-    private final ImageTypeEnum imageTypeEnum;
+    private final ImageType imageType;
     private final Map<String, String> exifInfo;
 
     public BitmapDecoder(Context context, Uri uri) {
         bitmap = decodeBitmapFromUri(context, uri);
         orientation = decodeBitmapOrientation(context, uri);
-        imageTypeEnum = BitmapUtils.getImageType(FileUtils.getRealPathFromUri(uri, context));
+        imageType = BitmapUtils.getImageType(FileUtils.getRealPathFromUri(uri, context));
         exifInfo = decodeExifInfo(context, uri);
     }
 
@@ -43,8 +43,8 @@ public class BitmapDecoder {
         return bitmap.getHeight();
     }
 
-    public ImageTypeEnum getImageType() {
-        return imageTypeEnum;
+    public ImageType getImageType() {
+        return imageType;
     }
 
     public String getFormat() {

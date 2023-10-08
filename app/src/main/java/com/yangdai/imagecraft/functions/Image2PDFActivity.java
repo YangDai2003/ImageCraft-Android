@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.RectF;
 import android.graphics.drawable.GradientDrawable;
 import android.graphics.pdf.PdfDocument;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -143,10 +144,21 @@ public class Image2PDFActivity extends BaseImageProcessingActivity {
                 File outputFile = new File(outputDirectory, outputFileName);
                 try {
                     pdfDocument.writeTo(new FileOutputStream(outputFile));
+                    pdfDocument.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                pdfDocument.close();
+                // 通知系统刷新文件夹
+                MediaScannerConnection.scanFile(
+                        viewModel.getContext(),
+                        new String[]{outputFile.getAbsolutePath()},
+                        null,
+                        (path, uri) -> {
+                            // 扫描完成后的回调方法
+                            // 可以在这里执行一些操作，例如显示一个Toast消息
+                            // 文件现在应该在文件管理器中可见
+                        }
+                );
                 viewModel.setFinished(true);
             }
         });

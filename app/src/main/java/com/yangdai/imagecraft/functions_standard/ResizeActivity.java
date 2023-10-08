@@ -13,7 +13,7 @@ import android.view.inputmethod.EditorInfo;
 import com.yangdai.imagecraft.databinding.ActivityResizeBinding;
 import com.yangdai.imagecraft.imagedata.BitmapDecoder;
 import com.yangdai.imagecraft.imagedata.BitmapUtils;
-import com.yangdai.imagecraft.imagedata.ImageTypeEnum;
+import com.yangdai.imagecraft.imagedata.ImageType;
 import com.yangdai.imagecraft.R;
 import com.yangdai.imagecraft.utils.Utils;
 import com.yangdai.imagecraft.base.BaseImageProcessingActivity;
@@ -41,7 +41,7 @@ public class ResizeActivity extends BaseImageProcessingActivity {
     protected void processImage(Uri uri) {
         BitmapDecoder bitmapDecoder = new BitmapDecoder(viewModel.getContext(), uri);
         Bitmap bitmap = bitmapDecoder.getBitmap();
-        ImageTypeEnum type = bitmapDecoder.getImageType();
+        ImageType type = bitmapDecoder.getImageType();
         if (bitmap != null) {
             try {
                 Bitmap resizedBitmap = isPercentage ?

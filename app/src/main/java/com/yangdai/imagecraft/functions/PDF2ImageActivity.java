@@ -14,7 +14,7 @@ import android.os.ParcelFileDescriptor;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.yangdai.imagecraft.databinding.ActivityPdfactivityBinding;
 import com.yangdai.imagecraft.imagedata.BitmapUtils;
-import com.yangdai.imagecraft.imagedata.ImageTypeEnum;
+import com.yangdai.imagecraft.imagedata.ImageType;
 import com.yangdai.imagecraft.R;
 import com.yangdai.imagecraft.base.BaseImageProcessingActivity;
 
@@ -73,7 +73,7 @@ public class PDF2ImageActivity extends BaseImageProcessingActivity {
                     Rect r = new Rect(0, 0, width, height);
                     page.render(bitmap, r, null, PdfRenderer.Page.RENDER_MODE_FOR_DISPLAY);
                     // 保存图片到文件
-                    BitmapUtils.saveImage(bitmap, viewModel.getContext(), ImageTypeEnum.PNG);
+                    BitmapUtils.saveImage(bitmap, viewModel.getContext(), ImageType.PNG);
                     // 关闭当前页
                     page.close();
 
