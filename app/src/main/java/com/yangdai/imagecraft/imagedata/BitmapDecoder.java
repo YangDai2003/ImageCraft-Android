@@ -4,24 +4,31 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.ParcelFileDescriptor;
 
 import androidx.exifinterface.media.ExifInterface;
 
 import com.yangdai.imagecraft.utils.FileUtils;
 
+import java.io.FileDescriptor;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class BitmapDecoder {
-    private final Bitmap bitmap;
+    private Bitmap bitmap = null;
     private final int orientation;
     private final ImageType imageType;
     private final Map<String, String> exifInfo;
 
     public BitmapDecoder(Context context, Uri uri) {
-        bitmap = decodeBitmapFromUri(context, uri);
+        try {
+            bitmap = getBitmapFromUri(context, uri);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         orientation = decodeBitmapOrientation(context, uri);
         imageType = BitmapUtils.getImageType(FileUtils.getRealPathFromUri(uri, context));
         exifInfo = decodeExifInfo(context, uri);
@@ -55,10 +62,18 @@ public class BitmapDecoder {
         return exifInfo;
     }
 
-    private Bitmap decodeBitmapFromUri(Context context, Uri uri) {
-        String path = FileUtils.getRealPathFromUri(uri, context);
-        return BitmapFactory.decodeFile(path);
+    private Bitmap getBitmapFromUri(Context context, Uri uri) throws IOException {
+        ParcelFileDescriptor parcelFileDescriptor = context.getContentResolver().openFileDescriptor(uri, "r");
+        FileDescriptor fileDescriptor = Objects.requireNonNull(parcelFileDescriptor).getFileDescriptor();
+        Bitmap bitmap = BitmapFactory.decodeFileDescriptor(fileDescriptor);
+        parcelFileDescriptor.close();
+        return bitmap;
     }
+
+//    private Bitmap decodeBitmapFromUri(Context context, Uri uri) {
+//        String path = FileUtils.getRealPathFromUri(uri, context);
+//        return BitmapFactory.decodeFile(path);
+//    }
 
     private Map<String, String> decodeExifInfo(Context context, Uri uri) {
         try {
