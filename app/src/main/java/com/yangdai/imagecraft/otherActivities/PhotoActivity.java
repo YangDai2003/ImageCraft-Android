@@ -3,13 +3,15 @@ package com.yangdai.imagecraft.otherActivities;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.drawable.Drawable;
+import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestBuilder;
 import com.yangdai.imagecraft.databinding.ActivityPhotoBinding;
+import com.yangdai.imagecraft.imagedata.BitmapDecoder;
 
 
 public class PhotoActivity extends AppCompatActivity {
@@ -28,9 +30,18 @@ public class PhotoActivity extends AppCompatActivity {
         getOnBackPressedDispatcher().addCallback(this, onBackPressedCallback);
 
         binding.photoView.setOnClickListener(v -> finishAfterTransition());
+
         Uri uri = getIntent().getParcelableExtra("uri");
-        RequestBuilder<Drawable> requestBuilder = Glide.with(this).asDrawable().sizeMultiplier(0.5f);
-        Glide.with(this).load(uri).thumbnail(requestBuilder).into(binding.photoView);
+        Bitmap bitmap = new BitmapDecoder(this, uri).getBitmap();
+        int colorMode = ActivityInfo.COLOR_MODE_DEFAULT;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            if (bitmap.hasGainmap()) {
+                colorMode = ActivityInfo.COLOR_MODE_HDR;
+            }
+        }
+        getWindow().setColorMode(colorMode);
+
+        Glide.with(this).load(bitmap).into(binding.photoView);
     }
 
 }

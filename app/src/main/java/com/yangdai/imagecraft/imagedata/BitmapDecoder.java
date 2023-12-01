@@ -70,11 +70,6 @@ public class BitmapDecoder {
         return bitmap;
     }
 
-//    private Bitmap decodeBitmapFromUri(Context context, Uri uri) {
-//        String path = FileUtils.getRealPathFromUri(uri, context);
-//        return BitmapFactory.decodeFile(path);
-//    }
-
     private Map<String, String> decodeExifInfo(Context context, Uri uri) {
         try {
             InputStream inputStream = context.getContentResolver().openInputStream(uri);

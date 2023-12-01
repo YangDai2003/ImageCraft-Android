@@ -15,8 +15,8 @@ android {
         minSdk 29
         //noinspection EditedTargetSdkVersion
         targetSdk 34
-        versionCode 19
-        versionName '2.9'
+        versionCode 20
+        versionName '3.0'
         resourceConfigurations += ["en", "zh"]
     }
 
@@ -57,7 +57,7 @@ dependencies {
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
     implementation 'com.github.bumptech.glide:glide:4.16.0'
 
-    implementation(platform('org.jetbrains.kotlin:kotlin-bom:1.9.10'))
+    implementation(platform('org.jetbrains.kotlin:kotlin-bom:1.9.21'))
 
     // google services
     implementation(platform('com.google.firebase:firebase-bom:32.6.0'))
