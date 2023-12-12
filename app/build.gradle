@@ -15,8 +15,8 @@ android {
         minSdk 29
         //noinspection EditedTargetSdkVersion
         targetSdk 34
-        versionCode 20
-        versionName '3.0'
+        versionCode 21
+        versionName '3.1'
         resourceConfigurations += ["en", "zh"]
     }
 
@@ -60,7 +60,7 @@ dependencies {
     implementation(platform('org.jetbrains.kotlin:kotlin-bom:1.9.21'))
 
     // google services
-    implementation(platform('com.google.firebase:firebase-bom:32.6.0'))
+    implementation(platform('com.google.firebase:firebase-bom:32.7.0'))
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.android.gms:play-services-oss-licenses:17.0.1'
